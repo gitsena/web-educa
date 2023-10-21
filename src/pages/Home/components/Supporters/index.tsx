@@ -30,7 +30,7 @@ export default function Supporters() {
   }
 
   function verify() {
-    if (supporter.email == '') {
+    if (supporter.email === '') {
       setErrorMessage(true)
     } else {
       console.log('VERIFICOU' + supporter)
@@ -65,7 +65,7 @@ export default function Supporters() {
               setSupporter({ ...supporter, email: e.target.value })
             }
             onBlur={() => {
-              if (supporter.email == '') {
+              if (supporter.email === '') {
                 setErrorMessage(true)
               }
             }}

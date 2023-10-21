@@ -64,7 +64,7 @@ export const Forum = () => {
   useEffect(() => {
     PostService.getTopic().then(
       (response: any) => {
-        if (response.status == 204) {
+        if (response.status === 204) {
           setIsTopicEmpty(true)
           return
         }

@@ -9,7 +9,7 @@ type Props = {
 export const SearchBar = ({ placeholder, value, onChange }: Props) => {
   return (
     <div className={style.container}>
-      <img src={search} />
+      <img src={search} alt='lupa' />
       <input
         name="search"
         id="search"

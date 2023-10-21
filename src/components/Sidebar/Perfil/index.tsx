@@ -22,7 +22,7 @@ export const Perfil = ({
   return (
     <>
       <div className={style.card}>
-        <img src={photo} />
+        <img src={photo} alt='foto figure' />
         <h3>{name}</h3>
         <h4>{userType}</h4>
         <span className={style.info}>

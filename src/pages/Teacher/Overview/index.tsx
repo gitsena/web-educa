@@ -32,12 +32,12 @@ export default function Overview({ conteudos, avaliacoes }: Props) {
         <Card
           img={iconPage}
           value={conteudos}
-          text={conteudos == 1 ? 'conteúdo postado' : 'conteúdos postados'}
+          text={conteudos === 1 ? 'conteúdo postado' : 'conteúdos postados'}
         />
         <Card
           img={iconStar}
           value={avaliacoes}
-          text={avaliacoes == 1 ? 'avaliação' : 'avaliações'}
+          text={avaliacoes === 1 ? 'avaliação' : 'avaliações'}
           onClick={showRatings}
         />
         <Card

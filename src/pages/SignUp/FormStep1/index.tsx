@@ -1,86 +1,86 @@
-import style from './formStep1.module.scss'
-import { useNavigate } from 'react-router-dom'
-import { useForm, FormActions } from '../../../utils/contexts/FormContext'
-import { Theme } from '../components/Theme'
-import { ChangeEvent, useEffect, useState } from 'react'
-import img from '../../../assets/img/image10.svg'
-import { Button } from '../../../components/Button'
-import { Input } from '../../../components/Input'
+import style from "./formStep1.module.scss";
+import { useNavigate } from "react-router-dom";
+import { useForm, FormActions } from "../../../utils/contexts/FormContext";
+import { Theme } from "../components/Theme";
+import { ChangeEvent, useEffect, useState } from "react";
+import img from "../../../assets/img/image10.svg";
+import { Button } from "../../../components/Button";
+import { Input } from "../../../components/Input";
 
 export const FormStep1 = () => {
-  const navigate = useNavigate()
-  const { state, dispatch } = useForm()
-  const [invalid, setInvalid] = useState<boolean>(false)
-  const [nameError, setNameError] = useState<boolean>(false)
-  const [lastNameError, setLastNameError] = useState<boolean>(false)
-  const [birthdateError, setBirthdateError] = useState<boolean>(false)
-  const [careerTimeError, setCareerTimeError] = useState<boolean>(false)
-  const [occupationError, setOccupationError] = useState<boolean>(false)
+  const navigate = useNavigate();
+  const { state, dispatch } = useForm();
+  const [invalid, setInvalid] = useState<boolean>(false);
+  const [nameError, setNameError] = useState<boolean>(false);
+  const [lastNameError, setLastNameError] = useState<boolean>(false);
+  const [birthdateError, setBirthdateError] = useState<boolean>(false);
+  const [careerTimeError, setCareerTimeError] = useState<boolean>(false);
+  const [occupationError, setOccupationError] = useState<boolean>(false);
 
   useEffect(() => {
     dispatch({
       type: FormActions.setCurrentStep,
       payload: 1
-    })
-  }, [])
+    });
+  }, [dispatch]);
 
   const handleNextStep = (e: Event) => {
-    e.preventDefault()
+    e.preventDefault();
     if (
       state.name.length >= 3 &&
       state.lastName.length >= 3 &&
-      state.birthDate !== '' &&
-      state.careerTime !== '' &&
-      state.occupation !== ''
+      state.birthDate !== "" &&
+      state.careerTime !== "" &&
+      state.occupation !== ""
     ) {
-      navigate('/cadastro/professor/etapa2')
-      console.log(state)
+      navigate("/cadastro/professor/etapa2");
+      console.log(state);
     } else {
-      setInvalid(true)
+      setInvalid(true);
     }
-  }
+  };
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setName,
       payload: e.target.value
-    })
-    setNameError(false)
-    setInvalid(false)
-  }
+    });
+    setNameError(false);
+    setInvalid(false);
+  };
   const handleLastNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setLastName,
       payload: e.target.value
-    })
-    setLastNameError(false)
-    setInvalid(false)
-  }
+    });
+    setLastNameError(false);
+    setInvalid(false);
+  };
   const handleBirthDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setBirthDate,
       payload: e.target.value
-    })
-    setBirthdateError(false)
-    setInvalid(false)
-  }
+    });
+    setBirthdateError(false);
+    setInvalid(false);
+  };
 
   const handleOccupationChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setOccupation,
       payload: e.target.value
-    })
-    setOccupationError(false)
-    setInvalid(false)
-  }
+    });
+    setOccupationError(false);
+    setInvalid(false);
+  };
   const handleCareerTimenChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setCareerTime,
       payload: e.target.value
-    })
-    setCareerTimeError(false)
-    setInvalid(false)
-  }
+    });
+    setCareerTimeError(false);
+    setInvalid(false);
+  };
 
   return (
     <>
@@ -93,8 +93,8 @@ export const FormStep1 = () => {
             placeholder="Nome"
             onChange={handleNameChange}
             onBlur={() => {
-              if (state.name.length < 3 || state.name === '') {
-                setNameError(true)
+              if (state.name.length < 3 || state.name === "") {
+                setNameError(true);
               }
             }}
           />
@@ -108,8 +108,8 @@ export const FormStep1 = () => {
             placeholder="Sobrenome"
             onChange={handleLastNameChange}
             onBlur={() => {
-              if (state.lastName.length < 3 || state.lastName === '') {
-                setLastNameError(true)
+              if (state.lastName.length < 3 || state.lastName === "") {
+                setLastNameError(true);
               }
             }}
           />
@@ -122,8 +122,8 @@ export const FormStep1 = () => {
             type="date"
             onChange={handleBirthDateChange}
             onBlur={() => {
-              if (state.birthDate === '') {
-                setBirthdateError(true)
+              if (state.birthDate === "") {
+                setBirthdateError(true);
               }
             }}
           />
@@ -137,8 +137,8 @@ export const FormStep1 = () => {
             placeholder="Professor de Matemática"
             onChange={handleOccupationChange}
             onBlur={() => {
-              if (state.occupation === '') {
-                setOccupationError(true)
+              if (state.occupation === "") {
+                setOccupationError(true);
               }
             }}
           />
@@ -151,8 +151,8 @@ export const FormStep1 = () => {
             type="date"
             onChange={handleCareerTimenChange}
             onBlur={() => {
-              if (state.careerTime === '') {
-                setCareerTimeError(true)
+              if (state.careerTime === "") {
+                setCareerTimeError(true);
               }
             }}
           />
@@ -175,5 +175,5 @@ export const FormStep1 = () => {
         </div>
       </Theme>
     </>
-  )
-}
+  );
+};

@@ -54,7 +54,7 @@ export const CardLikert = ({ contentId }: Props) => {
           </div>
         ))}
       </div>
-      {likertResponded && <a>Obrigado pelo feedback!</a>}
+      {likertResponded && <p>Obrigado pelo feedback!</p>}
     </div>
   );
 };

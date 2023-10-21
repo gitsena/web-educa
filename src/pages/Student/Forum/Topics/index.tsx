@@ -43,7 +43,7 @@ export const Topics = () => {
 
     PostService.getAllTopics().then(
       (response: any) => {
-        if (response.status == 204) {
+        if (response.status === 204) {
           setIsTopicEmpty(true)
           return
         }

@@ -30,7 +30,7 @@ export const VideoClass = ({
           <div className={isTeacher ? `${style.teacherInfo}` : style.info}>
             <div className={style.containerTitle}>
               <div className={style.title}>
-                <img src={imgPlay} alt=" image Play video" />
+                <img src={imgPlay} alt=" Play video" />
                 <h1>{title}</h1>
               </div>
               <p>

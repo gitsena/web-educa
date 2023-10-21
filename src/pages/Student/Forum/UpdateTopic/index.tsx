@@ -24,10 +24,10 @@ export const UpdateTopic = ({ onClose, selectedTopic }: Props) => {
 
   const updateTopic = () => {
     if (
-      (data.titulo != '' &&
-        data.descricao != '' &&
-        data.titulo != selectedTopic.titulo) ||
-      data.descricao != selectedTopic.descricao
+      (data.titulo !== '' &&
+        data.descricao !== '' &&
+        data.titulo !== selectedTopic.titulo) ||
+      data.descricao !== selectedTopic.descricao
     ) {
       PostService.updateTopic(selectedTopic.idTopico, data).then(
         (response: any) => {
