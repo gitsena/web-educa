@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b27a99a0.css",
+    "main.js": "/static/js/main.d2a5baac.js",
+    "static/media/errorImg.svg": "/static/media/errorImg.1f5e1182321560c8459ffbe95bbf8507.svg",
+    "static/media/symbiosis.svg": "/static/media/symbiosis.0253f5087ca935ea84eeeddee2038b2c.svg",
+    "static/media/student.svg": "/static/media/student.69e69c9bcdd8a8212dcc0c3ac35df591.svg",
+    "static/media/specialist.svg": "/static/media/specialist.aa178b326edf731236f0c0508a9bb9f0.svg",
+    "static/media/teacher.svg": "/static/media/teacher.b6affd215742c48a18e94bbe0a9a4ddc.svg",
+    "static/media/update.svg": "/static/media/update.288d9015fea0cf6a25b5ff9302521498.svg",
+    "static/media/contents.svg": "/static/media/contents.e70b45055afb783872ae603682bf3835.svg",
+    "static/media/image11.svg": "/static/media/image11.be3a64c7d7255e69e83a4e1cb80e2737.svg",
+    "static/media/search.svg": "/static/media/search.c2856fa99a2e1888a260dcb5cd5d5f40.svg",
+    "static/media/image10.svg": "/static/media/image10.87a7b1db1d9ff1508f80dd553f8d91e7.svg",
+    "static/media/greetingTeacher.svg": "/static/media/greetingTeacher.6b4fd8681f4aee18467490e763a46ad0.svg",
+    "static/media/PlayVideo.svg": "/static/media/PlayVideo.a3a574abcc28f3db33ea4c0c556dbe5a.svg",
+    "static/media/image09.svg": "/static/media/image09.d1005f476685d4aa3bf44e566bee3f64.svg",
+    "static/media/visible.svg": "/static/media/visible.a4583198b5f8ca478fcb2ca1a25bef81.svg",
+    "static/media/image08.svg": "/static/media/image08.3cb098666f47fe837d4a2f8bd3df7f12.svg",
+    "static/media/perfilTeacher.svg": "/static/media/perfilTeacher.b7a759aca230e9fd98d73402ef0363e2.svg",
+    "static/media/empty.svg": "/static/media/empty.8a894520aeaca134f3ef125b413c301e.svg",
+    "static/media/iconAdd.svg": "/static/media/iconAdd.3917c733c18fdcf5650d798b8fd0671c.svg",
+    "static/media/addSmall.svg": "/static/media/addSmall.37d7502a7a13f6b001cb5b00b9cc8272.svg",
+    "static/media/iconStar.svg": "/static/media/iconStar.8ff0fd1dcdbb63351916d6138be583a1.svg",
+    "static/media/edit.svg": "/static/media/edit.2c4a4f4bfd59feada50342906571bc4a.svg",
+    "static/media/delet.svg": "/static/media/delet.1f27fc07f53f7dfd8dc34bec5374b521.svg",
+    "static/media/logo.svg": "/static/media/logo.c2fdbaac9958026f7e73fa9890ecbc4e.svg",
+    "static/media/documents.png": "/static/media/documents.f3b1eab10d1208f7c76d.png",
+    "static/media/trophy.svg": "/static/media/trophy.e32ec7c6a6fbc9c4e021455bba50066a.svg",
+    "static/media/medal.svg": "/static/media/medal.3d53256f4d4739ca1c59598d89e88488.svg",
+    "static/media/iconPage.svg": "/static/media/iconPage.eebb3efa9fc0eff7f0befe47681d16aa.svg",
+    "static/media/perfilStudent.svg": "/static/media/perfilStudent.718cddb61e25ef93dcc198225f54919b.svg",
+    "index.html": "/index.html",
+    "main.b27a99a0.css.map": "/static/css/main.b27a99a0.css.map",
+    "main.d2a5baac.js.map": "/static/js/main.d2a5baac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b27a99a0.css",
+    "static/js/main.d2a5baac.js"
+  ]
+}
