@@ -1,5 +1,4 @@
 {
-  "homepage": "/",
   "name": "web-educa",
   "version": "0.1.0",
   "private": true,
@@ -16,8 +15,6 @@
     "styled-components": "^5.3.5"
   },
   "scripts": {
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,7 +30,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.11",
-    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
