@@ -1,0 +1,98 @@
+@import '../../../styles/sass/main.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+
+  .innerContainer {
+    max-height: 100vh;
+    margin: 0 161px;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+      display: none;
+    }
+
+    .cSearchBar {
+      position: sticky;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      height: 100px;
+      width: 870px;
+      background-color: $white;
+      z-index: 1;
+
+
+      .cOverviem {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 40px 0;
+        font-weight: 500;
+
+        img {
+          height: 32px;
+        }
+
+        .cardVisible {
+          height: 58px;
+          cursor: pointer;
+        }
+
+        .cardAdd {
+          background-color: $yellow-400;
+          color: $black;
+          height: 58px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .cBtn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    left: -182px;
+
+    .btn {
+      width: 136px;
+      color: $white;
+      margin: 40px 0;
+      border: $purple-100 2px solid;
+      background: $purple-100;
+
+      &:hover {
+        border: $purple-800 2px solid;
+        background: $purple-800;
+        transition: 2s;
+      }
+    }
+  }
+
+  .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px 0 24px;
+
+    span {
+      color: darkblue;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+
+  }
+}

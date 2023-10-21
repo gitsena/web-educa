@@ -1,0 +1,62 @@
+@import '../../../../styles/sass/main.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  @include mobile {
+    flex-direction: row;
+    padding: 16px;
+  }
+
+  h3 {
+    color: $purple-800;
+    font-weight: bold;
+    font-size: $bigText;
+    width: 200px;
+    text-align: center;
+
+    @include mobile {
+      width: 200px;
+      font-size: 16px;
+    }
+  }
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    }
+
+  &__image {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      max-width: 300px;
+    }
+    @include mobile {
+      max-width: 200px;
+    }
+
+  }
+}
+
+.title {
+  font-size: $title;
+  text-align: center;
+
+  @include tablet {
+    font-size: $subtitle;
+  }
+}

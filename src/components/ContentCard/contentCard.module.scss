@@ -1,0 +1,67 @@
+@import '../../styles/sass/main.scss';
+
+.card {
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+  gap: 16px;
+  width: 800px;
+  height: 96px;
+  padding: 9px 23px;
+  border-radius: 20px;
+  border: #0019fd 2px solid;
+  border-left: #0019fd 12px solid;
+  align-items: center;
+
+  &:hover {
+    background-color: #d7e9ff;
+    transition: 0.5s;
+  }
+
+  .circle {
+    background: #dededf;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    cursor: pointer;
+
+    .text {
+      display: grid;
+      grid-template-rows: 0fr 1fr;
+
+      .highlight {
+        font-size: $text;
+        color: $blue-300;
+        font-weight: bold;
+      }
+
+      span {
+        font-size: $text;
+        color: grey;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: $bigText;
+        font-weight: 700;
+        line-height: 0.1;
+      }
+    }
+
+    .date {
+      display: grid;
+      align-content: space-between;
+      justify-items: end;
+
+      p {
+        font-size: $x_small_label;
+        font-weight: 300;
+      }
+    }
+  }
+}

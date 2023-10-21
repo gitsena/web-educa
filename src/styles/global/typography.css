@@ -1,0 +1,15 @@
+html, body {
+  font-family: Montserrat, sans-serif;
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+}
+
+li {
+  list-style-type: none;
+}

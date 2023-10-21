@@ -1,0 +1,24 @@
+@import '../../../../styles/sass/main.scss';
+
+.footerHome {
+    height: auto;
+    background-color: #550084;
+    color: $white;
+    font-size: 13px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 2fr);
+    padding: 40px 80px 80px 80px;
+  
+  h4 {
+    font-size: 14px;
+    padding-bottom: 16px;
+  }
+  
+  p {
+    padding-bottom: 12px;
+    cursor: pointer;
+  }
+
+  
+}

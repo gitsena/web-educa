@@ -1,0 +1,35 @@
+@import '../../styles/sass/main.scss';
+
+.container {
+  margin-top: 48px;
+  height: 187px;
+  width: 100%;
+  background-color: #c9bbff;
+  border-radius: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span {
+    font-size: $subtitle;
+    font-weight: bold;
+  }
+
+  .title {
+    font-size: $subtitle;
+    margin-bottom: 0;
+    margin-left: 54px;
+  }
+
+  .subtitle {
+    font-size: $bigText;
+    margin-left: 54px;
+    width: 540px;
+
+  }
+}

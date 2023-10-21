@@ -1,0 +1,42 @@
+@import '../../../../styles/sass/main.scss';
+.card {
+  background-color: $white;
+  height: 300px;
+  width: 600px;
+  border-radius: 40px;
+  padding: 38px;
+  border: groove 2px;
+  text-align: center;
+  box-shadow: 0 18px 20px rgb(0 0 0 / 0%), 0 6px 6px rgb(0 0 0 / 12%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .imgContainer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .innerContainer {
+    width: 150px;
+    height: 200px;
+  }
+
+  .textContainer {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+}

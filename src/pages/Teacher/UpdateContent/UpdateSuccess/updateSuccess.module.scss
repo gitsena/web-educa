@@ -1,0 +1,36 @@
+@import '../../../../styles/sass/main.scss';
+
+.box {
+  background-color: $white;
+  width: 740px;
+  height: 530px;
+  border-radius: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: auto;
+
+
+  h1 {
+    font-size: $title;
+    font-weight: 700;
+    line-height: 0;
+    margin-top: 60px;
+  }
+
+  .btn {
+    color: $white;
+    background-color: $purple-800;
+    border: solid 2px $purple-800;
+    width: 230px;
+  }
+
+  div {
+    height: 70%;
+    margin: -80px 0px 87px 0px;
+    .image {
+      height: 140%;
+      width: 100%;
+    }
+  }
+}

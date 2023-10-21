@@ -1,0 +1,33 @@
+@import '../../styles/sass/main.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: initial;
+  box-sizing: border-box;
+
+  input {
+    background-color: $grey;
+    border-radius: 30px;
+    width: 100%;
+    height: 32px;
+    font-size: $placeholder;
+    border: 2px solid transparent;
+    text-indent: 12px;
+    margin-bottom: 30px;
+    font-family: Montserrat, sans-serif;
+
+    &:focus-within {
+      border: 1.5px solid $pink-300;
+      outline: none;
+      transition: ease-in 0.2s;
+    }
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-indent: 6px;
+  }
+}

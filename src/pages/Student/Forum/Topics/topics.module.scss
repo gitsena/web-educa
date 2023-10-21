@@ -1,0 +1,95 @@
+@import '../../../../styles/sass/main.scss';
+
+.container {
+  display: flex;
+  background-color: $white;
+
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      margin-right: 56px;
+      max-width: 300px;
+    }
+
+    img {
+      height: 300px;
+    }
+  }
+
+  .innerContainer {
+    max-height: 100vh;
+    margin: auto;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+      display: none;
+    }
+  }
+
+  .cOverviem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 40px 0;
+
+    .cardVisible {
+      height: 58px;
+
+      cursor: pointer;
+    }
+    .cardAdd {
+      background-color: $yellow-400;
+      color: $black;
+      height: 58px;
+      width: 279px;
+      cursor: pointer;
+    }
+  }
+
+  .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px 0 24px;
+
+    span {
+      color: darkblue;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+
+    .btn {
+      color: $white;
+      background-color: $pink-550;
+      border: solid 2px $pink-550;
+      border-radius: 30px;
+      height: 35px;
+      width: 200px;
+      font-size: $text;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .col {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      width: 200px;
+      justify-items: end;
+      align-items: end;
+
+      img {
+        cursor: pointer;
+        height: auto;
+      }
+    }
+  }
+}

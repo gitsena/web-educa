@@ -1,0 +1,12 @@
+@import "../../../../styles/sass/main.scss";
+
+.container{
+   font-size: 12px;
+
+   .step:active{
+      border-radius: 50%;
+      background-color: black;
+      padding: 1px 4;
+      
+   }
+}

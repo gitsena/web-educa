@@ -1,0 +1,24 @@
+@import '../../../../styles/sass/main.scss';
+
+.header {
+  width: 100%;
+  background-color: $purple-900;
+  height: 60px;
+  display: flex;
+
+  @include mobile {
+    justify-content: center;
+  }
+
+  .logo {
+    position: relative;
+    height: 50px;
+    padding: 20px 48px;
+
+    @include mobile {
+      height: 40px;
+      padding: 32px;
+    }
+
+  }
+}

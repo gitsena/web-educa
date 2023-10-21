@@ -1,0 +1,66 @@
+@import "../../../../styles/sass/main.scss";
+
+.box {
+  background-color: $white;
+  width: 950px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 95px;
+  text-align: center;
+  padding: 30px;
+  cursor: auto;
+
+  span {
+    color: $pink-600;
+    font-size: $bigText;
+    font-weight: 600;
+    right: calc(-100% + 40px);
+    top: 5px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+  }
+  .cOption {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: 3fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    .btnStudent {
+      color: $yellow-300;
+      background-color: $pink-500;
+      border: $pink-500 2px solid;
+      width: 210px;
+    }
+
+    .btnTeacher {
+      color: $yellow-300;
+      background-color: $blue-300;
+      border: $blue-300 2px solid;
+      width: 210px;
+    }
+
+    .image {
+      height: 300px;
+    }
+  }
+
+  h2 {
+    font-size: $subtitle;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: $bigText;
+    font-weight: 600;
+    line-height: 0;
+  }
+
+  .link {
+    font-size: $text;
+    color: $blue-600;
+    line-height: 0.1;
+    font-weight: 700;
+  }
+}

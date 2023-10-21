@@ -1,0 +1,127 @@
+@import '../../../../styles/sass/main.scss';
+
+.container {
+  display: grid;
+  gap: 200px 0px;
+  grid-template-columns: repeat(2, 2fr);
+  margin-bottom: 200px;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 100px;
+  }
+
+  .image {
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  img {
+    height: auto;
+  }
+
+  li {
+    padding-bottom: 12px;
+    padding: 0 0 12px 12px;
+    list-style-type: disc;
+    font-size: 24px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  .introStudent {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    padding-right: 80px;
+
+    @include tablet {
+      padding: 0 80px;
+    }
+
+    @include mobile {
+      padding: 0 16px;
+    }
+
+    img {
+      height: auto;
+      padding-right: $text;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    h3 {
+      color: $pink-500;
+      font-size: $subtitle;
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .introTeacher {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    padding-left: 80px;
+
+    @include tablet {
+      padding: 80px;
+    }
+    @include mobile {
+      padding: 16px;
+    }
+
+    img {
+      height: auto;
+      padding-right: $text;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    h3 {
+      color: $blue-600;
+      font-size: $subtitle;
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 40px;
+  padding: 40px 0px 80px 80px;
+
+  @include tablet {
+    padding: 40px 0px 16px 80px;
+  }
+
+  @include mobile {
+    font-size: 32px;
+    padding: 0 16px;
+  }
+}

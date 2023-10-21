@@ -1,0 +1,112 @@
+@import '../../../../styles/sass/main.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  min-height: 100vh;
+  background-color: $purple-900;
+  padding: 20px 160px 20px 160px;
+  justify-items: center;
+  box-sizing: border-box;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerForm {
+    width: 438px;
+    background-color: $white;
+    padding: 56px 32px;
+    border-radius: 96px;
+    box-sizing: border-box;
+    height: max-content;
+
+    @include mobile {
+      max-width: 310px;
+      width: 100%;
+      margin: 16px;
+      border-radius: 66px;
+    }
+
+    @include tablet {
+      margin: 24px 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+
+      hr {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.containerOption {
+  display: grid;
+  grid-template-rows: repeat(3, 0fr);
+  justify-items: center;
+  align-items: center;
+
+  h1 {
+    color: $yellow-300;
+    font-size: $subtitle;
+    font-weight: 600;
+
+    @include mobile {
+      margin-top: 56px;
+    }
+  }
+
+  .btnStudent {
+    color: $white;
+    width: 230px;
+    border: $blue-300 2px solid;
+  }
+
+  .btnTeacher {
+    color: $white;
+    border: $purple-100 2px solid;
+    width: 230px;
+    margin: 10px 0;
+  }
+
+  .btnStudentSelected {
+    width: 230px;
+    background-color: $purple-100;
+    color: $purple-900;
+  }
+
+  .btnTeacherSelected {
+    width: 230px;
+    background-color: $blue-300;
+    color: $purple-900;
+    margin: 10px 0;
+  }
+
+  img {
+    height: 500px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+}

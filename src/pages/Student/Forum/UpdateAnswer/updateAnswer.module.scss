@@ -1,0 +1,58 @@
+@import '../../../../styles/sass/main.scss';
+
+.box {
+  background-color: $white;
+  width: 750px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 95px;
+  padding: 60px;
+  cursor: auto;
+
+  textarea {
+    background-color: $grey;
+    width: 100%;
+    border-radius: 16px;
+    font-size: $placeholder;
+    border: none;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    font-family: Montserrat, sans-serif;
+  }
+
+  label {
+    font-size: $label;
+    font-weight: 600;
+    line-height: 35px;
+    text-indent: 8px;
+  }
+
+  .cBtn {
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    justify-items: end;
+    margin-top: 80px;
+
+    .btnBack {
+      font-weight: 600;
+      width: 130px;
+      margin: 0 10px;
+      border: transparent;
+    }
+
+    .btnRegister {
+      color: $white;
+      background-color: $purple-800;
+      border: solid 2px $purple-800;
+      width: 200px;
+    }
+  }
+  .error {
+    height: 20px;
+    color: rgb(255, 0, 255);
+    font-size: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+}

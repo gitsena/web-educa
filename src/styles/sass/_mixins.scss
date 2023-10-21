@@ -1,0 +1,12 @@
+/** Media Query / Responsivity **/
+@mixin mobile {
+    @media (max-width: $mobile) { @content; }
+}
+
+@mixin tablet {
+    @media (min-width: $mobile) and (max-width:$desktop) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) { @content; }
+}

@@ -1,0 +1,29 @@
+@import '../../../styles/sass/main.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0;
+  padding: 24px;
+
+  h1 {
+    padding-left: 24px;
+    font-size: $text;
+    font-weight: 600;
+    opacity: 0.5;
+  }
+
+  .cOverviem {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+
+    .cardAdd {
+      background-color: $yellow-400;
+      color: $black;
+      width: 279px;
+      cursor: pointer;
+    }
+  }
+}

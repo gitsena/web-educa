@@ -1,0 +1,51 @@
+@import '../../../../styles/sass/main.scss';
+
+.feedbacks {
+  padding: 200px 88px 0 88px;
+
+  .title {
+    display: flex;
+    font-size: $title;
+    justify-content: center;
+    margin-bottom: 130px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    height: 335px;
+    width: 331px;
+    background-color: $purple-800;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    p {
+      color: #dededf;
+      margin-top: 24px;
+    }
+    .titleCard {
+      display: flex;
+      flex-direction: row;
+      .circle {
+        background: #dededf;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        margin-top: 20px;
+      }
+      h2 {
+        font-size: $bigText;
+        margin: 20px 0 0 20px;
+      }
+      h3 {
+        font-weight: 500;
+        margin: 8px 0 0 20px;
+      }
+      color: $yellow-400;
+    }
+  }
+}

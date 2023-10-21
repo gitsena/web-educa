@@ -1,0 +1,75 @@
+@import '../../../../styles/sass/main.scss';
+
+.container {
+  background-color: $purple-800;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  height: 70vh;
+  border-bottom-left-radius: 116% 72px;
+  border-bottom-right-radius: 100% 160px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 24px;
+    justify-content: center;
+    height: auto;
+  }
+
+  .innerContainer{
+    padding-left: 88px;
+    margin-top: 48px;
+
+    h1 {
+      color: $yellow-400;
+      width: auto;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 54px;
+  
+      @include mobile {
+        font-size: 24px;
+        line-height: 32px;
+        top: 1000px;
+      }
+    }
+  
+    p {
+      color: $white;
+      max-width: 490px;
+      letter-spacing: 0.5px;
+      font-size: 18px;
+      line-height: 24px;
+      span {
+        color: #33c3df;
+        font-weight: 700;
+      }
+  
+      @include mobile {
+        letter-spacing: 0.5px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+  
+
+  .hero {
+    position: absolute;
+    top: 0;
+    right: 0px;
+
+    img {
+      height: 650px;
+
+      @include tablet {
+        height: auto;
+      }
+
+      @include mobile {
+        top: -100px;
+        height: auto;
+      }
+    }
+  }
+}

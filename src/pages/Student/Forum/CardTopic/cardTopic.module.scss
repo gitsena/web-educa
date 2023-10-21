@@ -1,0 +1,104 @@
+@import '../../../../styles/sass/main.scss';
+
+.container {
+  display: flex;
+
+  .unasweredCard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 150px;
+    width: 830px;
+    border-radius: 20px;
+    background-color: $white;
+    border: groove 2px;
+    padding: 10px 24px;
+    border-left: grey 12px solid;
+
+    &:hover {
+      background-color: #e2e2e2;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .info {
+      display: grid;
+      grid-template-rows: 0fr 1fr;
+      h2 {
+        font-size: $bigText;
+        font-weight: 700;
+        line-height: 0.1;
+      }
+
+      p {
+        font-size: $text;
+        font-weight: 400;
+      }
+
+      span {
+        font-size: $text;
+        color: grey;
+        margin-left: 8px;
+        font-weight: 700;
+      }
+    }
+    .date {
+      display: grid;
+      align-content: space-between;
+      justify-items: end;
+
+      p {
+        font-size: $x_small_label;
+        font-weight: 300;
+      }
+    }
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 150px;
+    width: 830px;
+    border-radius: 20px;
+    background-color: $white;
+    border: groove 2px;
+    padding: 10px 24px;
+    border-left: $pink-600 12px solid;
+
+    &:hover {
+      background-color: #f0d7ff;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .info {
+      display: grid;
+      grid-template-rows: 0fr 1fr;
+      h2 {
+        font-size: $bigText;
+        font-weight: 700;
+        line-height: 0.1;
+      }
+
+      p {
+        font-size: $text;
+        font-weight: 400;
+      }
+
+      span {
+        font-size: $text;
+        color: $pink-600;
+        margin-left: 8px;
+        font-weight: 700;
+      }
+    }
+    .date {
+      display: grid;
+      align-content: space-between;
+      justify-items: end;
+
+      p {
+        font-size: $x_small_label;
+        font-weight: 300;
+      }
+    }
+  }
+}

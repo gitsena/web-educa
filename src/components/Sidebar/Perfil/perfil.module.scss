@@ -1,0 +1,39 @@
+@import '../../../styles/sass/main.scss';
+
+.card {
+  height: auto;
+  width: 120px;
+  border: $purple-500 2px solid;
+  border-radius: 46px;
+  font-size: $small_label;
+  color: $yellow-400;
+  padding: 20px;
+  margin: 40px 0;
+
+  img {
+    height: 70px;
+    width: 70px;
+    position: relative;
+    left: 25px;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  h4 {
+    font-weight: 300;
+    line-height: 0.2;
+    margin-bottom: 30px;
+  }
+
+  .info {
+    font-size: $x_small_label;
+    color: $white;
+    line-height: 0.1;
+    p {
+      color: $yellow-800;
+      font-weight: 600;
+    }
+  }
+}

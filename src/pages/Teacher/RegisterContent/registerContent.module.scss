@@ -1,0 +1,48 @@
+@import '../../../styles/sass/main.scss';
+
+.box {
+  background-color: $white;
+  width: 750px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 95px;
+  padding: 60px;
+  cursor: auto;
+
+  input {
+    margin-bottom: 0;
+  }
+
+  .cSelect {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+
+  .cBtn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    margin-top: 80px;
+
+    .btnBack {
+      font-weight: 600;
+      width: 130px;
+      margin: 0 10px;
+      border: transparent;
+    }
+
+    .btnRegister {
+      color: $white;
+      background-color: $purple-800;
+      border: solid 2px $purple-800;
+      width: 310px;
+    }
+  }
+  .error {
+    height: 20px;
+    color: rgb(255, 0, 255);
+    font-size: 13px;
+    margin-left: 10px;
+  }
+}

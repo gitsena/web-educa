@@ -1,0 +1,73 @@
+@import '../../../../styles/sass/main.scss';
+.container {
+  padding: 200px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include mobile {
+    padding: 100px 16px;
+  }
+  .title {
+    display: flex;
+    font-size: $title;
+    justify-content: center;
+    margin-bottom: 130px;
+
+    @include mobile {
+      font-size: $subtitle;
+      text-align: center;
+    }
+  }
+  .innerContainer {
+    display: flex;
+    gap: 32px;
+ 
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+    img {
+      @include mobile {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+  .supporter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    background-color: $yellow-500;
+    border-radius: 70px;
+    border: none;
+    font-weight: bold;
+    font-size: $text;
+    padding: 20px 0 20px 0;
+    gap: 20px;
+    width: 400px;
+
+    .ipt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 380px;
+
+      input {
+        width: 300px;
+      }
+    }
+
+    img {
+      height: 40px;
+    }
+  }
+  p {
+    font-size: 12px;
+    text-align: center;
+    color: $pink-500;
+  }
+}

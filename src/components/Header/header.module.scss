@@ -1,0 +1,74 @@
+@import '../../styles/sass/main.scss';
+
+.header {
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  background-color: $purple-800;
+  height: 80px;
+  padding: 20px 0px;
+
+  li {
+    color: $yellow-400;
+    padding: 8px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $purple-300;
+      border-radius: 30px;
+      transition: all 0.2s ease-out;
+    }
+  }
+
+  @include mobile {
+    position: relative;
+    justify-content: center;
+    height: 60px;
+  }
+
+  .logo {
+    position: relative;
+    height: 60px;
+    cursor: pointer;
+    padding: 0px 32px 0px 88px;
+
+    @include mobile {
+      z-index: 1;
+      padding: 0;
+    }
+  }
+
+  .icon {
+    display: none;
+
+    @include mobile {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      transform: translate(100%, 60%);
+      cursor: pointer;
+    }
+  }
+  .menu {
+    display: flex;
+    gap: 16px;
+    background-color: $purple-800;
+
+    &__closed {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      box-sizing: border-box;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      padding: 24px;
+      top: 32px;
+    }
+  }
+}
