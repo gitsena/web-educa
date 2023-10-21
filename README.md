@@ -3,6 +3,7 @@
 </h1>
 
 ## 📃 Sumário
+
 - [Sobre a aplicação](#-Sobre-a-aplicação)
 - [Funcionamento](#-Funcionamento)
 - [O que tem na aplicação](#-O-que-tem-na-aplicação)
@@ -10,17 +11,21 @@
 - [Links úteis](#-Links-úteis)
 
 ##
+
 ## 🔮 Sobre a aplicação
 
 A e-duca é a aplicação de apoio no estudo de exatas para alunos no terceiro ano do Ensino Médio. Basicamente o(a) usuário(a) acessa a aplicação na web, faz o seu cadastro e, tem acesso à diversos conteúdos selecionados e previamente inseridos na aplicação por professores especializados.
 
 ##
+
 ## 🛠 Funcionamento
 
 As aplicação é hospedada na Azure. O front-end se comunica com a API das aplicação desenvolvida em _Java_ pelo time de back-end da e-duca.
 
 ##
+
 ## 🔩 O que tem na aplicação
+
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
@@ -39,6 +44,7 @@ Entre outras bibliotecas que são mais específicas, pode-se listar:
 - [AOS](https://michalsnik.github.io/aos/)
 
 ##
+
 ## 🧩 Como rodar a aplicação localmente
 
 1. Clone o repositório:
@@ -58,7 +64,9 @@ cd e-duca-www
 ```bash
 yarn
 ```
+
 ou
+
 ```bash
 npm i
 ```
@@ -68,7 +76,9 @@ npm i
 ```bash
 yarn start
 ```
+
 ou
+
 ```bash
 npm start
 ```
@@ -79,6 +89,7 @@ A aplicação estará disponível localmente em
 > Vale notar que há um script muito útil para realizar uma "limpeza" na aplicação e reinstalar as dependências. Esse script remove os caches e diretórios `node_modules` e faz a reinstalação de tudo. O script é `yarn reinstall`
 
 ##
+
 ## 🔗 Links úteis
 
 - [Repositório e-duca API](https://github.com/julianaesteves/e-duca-api)
