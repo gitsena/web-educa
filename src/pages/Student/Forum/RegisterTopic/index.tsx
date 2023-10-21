@@ -23,7 +23,7 @@ export const RegisterTopic = ({ onClose }: Props) => {
   }
 
   const registerQuestion = () => {
-    if (data.titulo != '' && data.descricao != '') {
+    if (data.titulo !== '' && data.descricao !== '') {
       PostService.registerTopic(data).then(
         (response: any) => {
           console.log(response.data)
@@ -52,7 +52,7 @@ export const RegisterTopic = ({ onClose }: Props) => {
 
       };
     }
-  }, [showUpdateSuccess]);
+  }, [showUpdateSuccess, onClose]);
 
   const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;

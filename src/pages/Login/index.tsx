@@ -93,7 +93,7 @@ export const Login = () => {
           <img src={img} alt="" />
           <h3>Ainda não possui uma conta?</h3>
           <div onClick={() => setIsModalVisible(true)}>
-            <a>Cadastrar-se</a>
+            <p>Cadastrar-se</p>
           </div>
         </div>
         <div>

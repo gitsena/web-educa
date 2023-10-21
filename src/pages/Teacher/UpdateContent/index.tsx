@@ -58,9 +58,9 @@ export const UpdateContent = ({ onClose, contentId }: Props) => {
 
   function handleUpdateContent() {
     if (
-      data.titulo != '' &&
+      data.titulo !== '' &&
       data.habilidade.codigo !== '' &&
-      (data.texto != '' || videoId !== '')
+      (data.texto !== '' || videoId !== '')
     ) {
       PostService.updateContent(contentId, data).then(
         (response: any) => {
@@ -91,7 +91,7 @@ export const UpdateContent = ({ onClose, contentId }: Props) => {
         onClose();
       };
     }
-  }, [showUpdateSuccess]);
+  }, [showUpdateSuccess, onClose]);
 
   return (
     <>

@@ -18,12 +18,12 @@ export const SignUp = ({ onClose }: Props) => {
             <img
               className={style.image}
               src={student}
-              alt="student reference image"
+              alt="student reference"
             />
             <img
               className={style.image}
               src={teacher}
-              alt="teacher reference image"
+              alt="teacher reference"
             />
             <Button
               className={style.btnStudent}

@@ -92,10 +92,9 @@ export const RegisterContent = ({ onClose }: Props) => {
       return () => {
         clearTimeout(timer);
         onClose();
-
       };
     }
-  }, [showUpdateSuccess]);
+  }, [showUpdateSuccess, onClose]);
 
   return (
     <>

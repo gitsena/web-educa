@@ -33,16 +33,16 @@ export const FormStep2 = () => {
       payload: 2
     })
   }, [dispatch]); 
-  
+
   const handleNextStep = () => {
     if (
-      data.nome != '' &&
-      data.sobrenome != '' &&
-      data.email != '' &&
-      data.dataNasc != '' &&
+      data.nome !== '' &&
+      data.sobrenome !== '' &&
+      data.email !== '' &&
+      data.dataNasc !== '' &&
       data.senha.length >= 8 &&
-      data.inicioAtuacao != '' &&
-      data.areaAtuacao != ''
+      data.inicioAtuacao !== '' &&
+      data.areaAtuacao !== ''
     ) {
       PostService.registerTeacher(data)
         .then(function (response) {
@@ -119,7 +119,7 @@ export const FormStep2 = () => {
               if (data.senha === '' || data.senha.length < 8) {
                 setPasswordError(true)
 
-                if (data.senha == state.confirmPassword) {
+                if (data.senha === state.confirmPassword) {
                   setIsSamePassword(true)
                 }
               }

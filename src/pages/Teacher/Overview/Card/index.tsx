@@ -12,7 +12,7 @@ type Props = {
 export const Card = ({ className, img, h4, text, value, onClick }: Props) => {
   return (
     <div className={`${style.card} ${className}`} onClick={onClick}>
-      <img src={img} onClick={onClick} />
+      <img src={img} onClick={onClick} alt='icone' />
       <div className={style.text}>
         <span className={style.highlight}>{h4}</span>
         <span className={style.highlight}>{value}</span>

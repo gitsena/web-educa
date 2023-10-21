@@ -27,7 +27,7 @@ export default function Header() {
           return (
             <li key={item.id}>
               {item.id === 3 ? (
-                <a onClick={() => setIsModalVisible(true)}>{item.title}</a>
+                <span onClick={() => setIsModalVisible(true)}>{item.title}</span>
               ) : (
                 <Link to={item.url}>{item.title}</Link>
               )}

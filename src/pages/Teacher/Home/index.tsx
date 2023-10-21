@@ -70,7 +70,7 @@ export const Home = () => {
   useEffect(() => {
     PostService.getUserContent().then(
       (response: any) => {
-        if (response.status == 204) {
+        if (response.status === 204) {
           setIsUserContentEmpty(true)
           return
         }

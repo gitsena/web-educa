@@ -119,7 +119,7 @@ export const SelectedTopic = ({ onClose, selectedTopic, student }: Props) => {
                       {" "}{answer.usuario.nome} {answer.usuario.sobrenome}
                     </span>
                   </div>
-                  {student.name == selectedTopic.respostas[index].usuario.nome && (
+                  {student.name === selectedTopic.respostas[index].usuario.nome && (
                     <div >
                       <img
                         src={iconEdit}
@@ -147,7 +147,7 @@ export const SelectedTopic = ({ onClose, selectedTopic, student }: Props) => {
                   value={newAnswer}
                   onChange={(e: any) => setNewAnswer(e.target.value)}
                   onBlur={() => {
-                    if (newAnswer == '') {
+                    if (newAnswer === '') {
                       setInvalid(true)
                     }
                   }}

@@ -71,7 +71,7 @@ export default function Supporters() {
             }}
           />
 
-          <img src={send} onClick={onSubmit} />
+          <img src={send} onClick={onSubmit} alt='envelope' />
         </div>
       </div>
       {errorMessage && <p>Por favor, preencha o e-mail corretamente!</p>}

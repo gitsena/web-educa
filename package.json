@@ -3,7 +3,7 @@
   "name": "web-educa",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
+  "license": "MIT", 
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.1.3",

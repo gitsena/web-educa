@@ -1,37 +1,37 @@
-import { ContentCard } from '../../../components/ContentCard'
-import { SearchBar } from '../../../components/SearchBar'
-import { useEffect, useState } from 'react'
-import PostService from '../../../services/post.service'
-import style from './content.module.scss'
-import { Reading } from '../../../components/Reading'
-import { Button } from '../../../components/Button'
-import { VideoClass } from '../../../components/VideoClass'
-import iconDocument from '../../../assets/img/documents.png'
+import { ContentCard } from "../../../components/ContentCard";
+import { SearchBar } from "../../../components/SearchBar";
+import { useEffect, useState } from "react";
+import PostService from "../../../services/post.service";
+import style from "./content.module.scss";
+import { Reading } from "../../../components/Reading";
+import { Button } from "../../../components/Button";
+import { VideoClass } from "../../../components/VideoClass";
+import iconDocument from "../../../assets/img/documents.png";
 
 export const Content = () => {
-  const [search, setSearch] = useState('')
-  const [content, setContent] = useState<any[]>([])
-  const [isContentClicked, setIsContentClicked] = useState<boolean>(false)
-  const [contentClicked, setContentClicked] = useState<any>({})
-  const [isVideo, setIsVideo] = useState<boolean>(false)
+  const [search, setSearch] = useState("");
+  const [content, setContent] = useState<any[]>([]);
+  const [isContentClicked, setIsContentClicked] = useState<boolean>(false);
+  const [contentClicked, setContentClicked] = useState<any>({});
+  const [isVideo, setIsVideo] = useState<boolean>(false);
 
   useEffect(() => {
     PostService.getAllContent().then(
       (response: any) => {
-        setContent(response.data.content)
+        setContent(response.data.content);
       },
       (error: any) => {
-        console.log('CONTENT/PROFESSOR/getAllContent: Erro', error.response)
+        console.log("CONTENT/PROFESSOR/getAllContent: Erro", error.response);
 
         if (error.response && error.response.status === 403) {
-          console.log('CONTENT/PROFESSOR/getAllContent: Erro de autenticação')
+          console.log("CONTENT/PROFESSOR/getAllContent: Erro de autenticação");
         }
       }
-    )
-  }, [])
+    );
+  }, []);
 
   function handleContentClick(post: any) {
-    console.log(post)
+    console.log(post);
     setContentClicked({
       titulo: post.titulo,
       video: post.urlVideo,
@@ -39,16 +39,16 @@ export const Content = () => {
       sobrenome: post.usuario.sobrenome,
       categoria: post.habilidade.codigo,
       texto: post.texto
-    })
+    });
 
     if (
-      post.urlVideo !== 'https://www.youtube.com/embed/undefined' &&
+      post.urlVideo !== "https://www.youtube.com/embed/undefined" &&
       post.urlVideo !== null &&
-      post.urlVideo !== 'https://www.youtube.com/embed/'
+      post.urlVideo !== "https://www.youtube.com/embed/"
     ) {
-      setIsVideo(true)
+      setIsVideo(true);
     }
-    setIsContentClicked(true)
+    setIsContentClicked(true);
   }
 
   return (
@@ -97,13 +97,14 @@ export const Content = () => {
             {content &&
               content
                 .filter((post) => {
-                  if (search == '') {
-                    return post;
+                  if (search === "") {
+                    return true;
                   } else if (
                     post.titulo.toLowerCase().includes(search.toLowerCase())
                   ) {
-                    return post;
+                    return true;
                   }
+                  return false;
                 })
                 .map((post: any) => (
                   <ContentCard
@@ -121,4 +122,4 @@ export const Content = () => {
       )}
     </div>
   );
-}  
+};

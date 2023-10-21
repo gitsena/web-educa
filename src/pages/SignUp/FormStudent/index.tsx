@@ -33,8 +33,8 @@ export const FormStudent = () => {
     if (
       data.nome.length >= 3 &&
       data.sobrenome.length >= 3 &&
-      data.email != '' &&
-      data.dataNasc != '' &&
+      data.email !== '' &&
+      data.dataNasc !== '' &&
       data.senha.length >= 8
     ) {
       PostService.registerStudent(data)
@@ -180,7 +180,7 @@ export const FormStudent = () => {
               if (data.senha === '' || data.senha.length < 8) {
                 setPasswordError(true)
 
-                if (data.senha == state.confirmPassword) {
+                if (data.senha === state.confirmPassword) {
                   setIsSamePassword(true)
                 }
               }
