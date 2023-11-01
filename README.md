@@ -50,7 +50,7 @@ Entre outras bibliotecas que são mais específicas, pode-se listar:
 1. Clone o repositório:
 
 ```bash
-git clone git@github.com:julianaesteves/e-duca-www.git
+https://github.com/gitsena/web-educa.git
 ```
 
 2. Navegue no diretório da aplicação:
