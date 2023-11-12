@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
     "target": "es5",
     "rootDir": "src",
     "outDir": "build",

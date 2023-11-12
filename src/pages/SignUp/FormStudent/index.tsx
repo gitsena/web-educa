@@ -1,24 +1,24 @@
-import style from './formStudent.module.scss'
-import { Theme } from '../components/Theme'
-import { FormActions, useForm } from '../../../utils/contexts/FormContext'
-import { ChangeEvent, useState } from 'react'
-import img from '../../../assets/img/image09.svg'
-import { Button } from '../../../components/Button'
-import PostService from '../../../services/post.service'
-import { Input } from '../../../components/Input'
-import { useNavigate } from 'react-router-dom'
+import style from "./formStudent.module.scss";
+import { Theme } from "../components/Theme";
+import { FormActions, useForm } from "../../../utils/contexts/FormContext";
+import { ChangeEvent, useState } from "react";
+import img from "../../../assets/img/image09.svg";
+import { Button } from "../../../components/Button";
+//import PostService from '../../../services/post.service'
+import { Input } from "../../../components/Input";
+import { useNavigate } from "react-router-dom";
 
 export const FormStudent = () => {
-  const navigate = useNavigate()
-  const { state, dispatch } = useForm()
-  const [invalid, setInvalid] = useState<boolean>(false)
-  const [nameError, setNameError] = useState<boolean>(false)
-  const [lastNameError, setLastNameError] = useState<boolean>(false)
-  const [emailError, setEmailError] = useState<boolean>(false)
-  const [birthdateError, setBirthdateError] = useState<boolean>(false)
-  const [passwordError, setPasswordError] = useState<boolean>(false)
-  const [isSamePassword, setIsSamePassword] = useState<boolean>(true)
-  const [sucessMessage, setSucessMessage] = useState<boolean>(false)
+  const navigate = useNavigate();
+  const { state, dispatch } = useForm();
+  const [invalid, setInvalid] = useState<boolean>(false);
+  const [nameError, setNameError] = useState<boolean>(false);
+  const [lastNameError, setLastNameError] = useState<boolean>(false);
+  const [emailError, setEmailError] = useState<boolean>(false);
+  const [birthdateError, setBirthdateError] = useState<boolean>(false);
+  const [passwordError, setPasswordError] = useState<boolean>(false);
+  const [isSamePassword, setIsSamePassword] = useState<boolean>(true);
+  const [sucessMessage, setSucessMessage] = useState<boolean>(false);
 
   const data = {
     nome: state.name,
@@ -26,17 +26,29 @@ export const FormStudent = () => {
     email: state.email,
     dataNasc: state.birthDate,
     senha: state.password
-  }
+  };
 
   const handleSubmit = (e: Event) => {
-    e.preventDefault()
+    e.preventDefault();
     if (
       data.nome.length >= 3 &&
       data.sobrenome.length >= 3 &&
-      data.email !== '' &&
-      data.dataNasc !== '' &&
+      data.email !== "" &&
+      data.dataNasc !== "" &&
       data.senha.length >= 8
-    ) {
+    )
+      dispatch({
+        type: FormActions.setAllData,
+        payload: {
+          name: data.nome,
+          lastName: data.sobrenome,
+          birthDate: data.dataNasc,
+          email: data.email,
+          password: data.senha
+          // ... outras propriedades do formulário ...
+        }
+      });
+    /*{
       PostService.registerStudent(data)
         .then(function (response) {
           console.log(response.status)
@@ -52,57 +64,58 @@ export const FormStudent = () => {
       console.log(state)
     } else {
       setInvalid(true)
-    }
-  }
+    }*/
+    navigate("/login");
+  };
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setName,
       payload: e.target.value
-    })
-    setNameError(false)
-    setInvalid(false)
-  }
+    });
+    setNameError(false);
+    setInvalid(false);
+  };
   const handleLastNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setLastName,
       payload: e.target.value
-    })
-    setLastNameError(false)
-    setInvalid(false)
-  }
+    });
+    setLastNameError(false);
+    setInvalid(false);
+  };
   const handleBirthDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setBirthDate,
       payload: e.target.value
-    })
-    setBirthdateError(false)
-    setInvalid(false)
-  }
+    });
+    setBirthdateError(false);
+    setInvalid(false);
+  };
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setEmail,
       payload: e.target.value
-    })
-    setEmailError(false)
-    setInvalid(false)
-  }
+    });
+    setEmailError(false);
+    setInvalid(false);
+  };
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setPassword,
       payload: e.target.value
-    })
-    setPasswordError(false)
-    setInvalid(false)
-  }
+    });
+    setPasswordError(false);
+    setInvalid(false);
+  };
   const handleCPasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setConfirmPassword,
       payload: e.target.value
-    })
-    setIsSamePassword(true)
-    setInvalid(false)
-  }
+    });
+    setIsSamePassword(true);
+    setInvalid(false);
+  };
 
   return (
     <>
@@ -118,8 +131,8 @@ export const FormStudent = () => {
             placeholder="Nome"
             onChange={handleNameChange}
             onBlur={() => {
-              if (data.nome.length < 3 || data.nome === '') {
-                setNameError(true)
+              if (data.nome.length < 3 || data.nome === "") {
+                setNameError(true);
               }
             }}
           />
@@ -133,8 +146,8 @@ export const FormStudent = () => {
             placeholder="Sobrenome"
             onChange={handleLastNameChange}
             onBlur={() => {
-              if (data.sobrenome.length < 3 || data.sobrenome === '') {
-                setLastNameError(true)
+              if (data.sobrenome.length < 3 || data.sobrenome === "") {
+                setLastNameError(true);
               }
             }}
           />
@@ -147,8 +160,8 @@ export const FormStudent = () => {
             type="date"
             onChange={handleBirthDateChange}
             onBlur={() => {
-              if (data.dataNasc === '') {
-                setBirthdateError(true)
+              if (data.dataNasc === "") {
+                setBirthdateError(true);
               }
             }}
           />
@@ -162,8 +175,8 @@ export const FormStudent = () => {
             placeholder="exemplo@email.com"
             onChange={handleEmailChange}
             onBlur={() => {
-              if (data.email === '') {
-                setEmailError(true)
+              if (data.email === "") {
+                setEmailError(true);
               }
             }}
           />
@@ -177,11 +190,11 @@ export const FormStudent = () => {
             placeholder="Mínimo de 8 caracteres"
             onChange={handlePasswordChange}
             onBlur={() => {
-              if (data.senha === '' || data.senha.length < 8) {
-                setPasswordError(true)
+              if (data.senha === "" || data.senha.length < 8) {
+                setPasswordError(true);
 
                 if (data.senha === state.confirmPassword) {
-                  setIsSamePassword(true)
+                  setIsSamePassword(true);
                 }
               }
             }}
@@ -197,7 +210,7 @@ export const FormStudent = () => {
             onChange={handleCPasswordChange}
             onBlur={() => {
               if (data.senha !== state.confirmPassword) {
-                setIsSamePassword(false)
+                setIsSamePassword(false);
               }
             }}
           />
@@ -219,9 +232,8 @@ export const FormStudent = () => {
             path="/login"
             title="Ir para login"
           />
-
         </div>
       </Theme>
     </>
-  )
-}
+  );
+};

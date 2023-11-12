@@ -4,9 +4,10 @@ import { Button } from '../../../components/Button'
 import { Select } from '../../../components/Select'
 import { useState, useEffect } from 'react'
 import { SelectType } from './SelectType'
-import PostService from '../../../services/post.service'
+//import PostService from '../../../services/post.service'
 import { UpdateSuccess } from '../UpdateContent/UpdateSuccess'
 import { Modal } from '../../../components/Modal'
+import habilityMock from './HabilityMock';
 
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
 }
 
 export const RegisterContent = ({ onClose }: Props) => {
-  const [habilities, setHabilities] = useState<any[]>([])
+  //const [habilities, setHabilities] = useState<any[]>([])
   const [hability, setHability] = useState("")
   const [type, setType] = useState("")
   const [title, setTitle] = useState('')
@@ -27,6 +28,7 @@ export const RegisterContent = ({ onClose }: Props) => {
   const [videoIdError, setVideoIdError] = useState<boolean>(false)
   const [invalid, setInvalid] = useState<boolean>(false)
   const [showUpdateSuccess, setShowUpdateSuccess] = useState(false);
+  const [habilities, setHabilities] = useState(habilityMock);
 
   const data = {
     titulo: title,
@@ -37,8 +39,18 @@ export const RegisterContent = ({ onClose }: Props) => {
     texto: texto,
     urlVideo: `https://www.youtube.com/embed/${videoId}`
   }
+  
 
-  useEffect(() => {
+  const registerContent = () => {
+    if (title !== '' && workload !== '' && hability !== '' && (texto !== '' || videoId !== '')) {
+      setShowUpdateSuccess(true);
+    } else {
+      setInvalid(true);
+    }
+  };
+  
+  /*useEffect(() => {
+
     PostService.getHability().then(
       (response: any) => {
         setHabilities(response.data)
@@ -83,7 +95,7 @@ export const RegisterContent = ({ onClose }: Props) => {
       setInvalid(true)
     }
   }
-
+*/
   useEffect(() => {
     if (showUpdateSuccess) {
       const timer = setTimeout(() => {
@@ -122,7 +134,7 @@ export const RegisterContent = ({ onClose }: Props) => {
           >
             {habilities?.map((habilidade) => {
               return (
-                <option key={habilidade.idHabilidade}>{habilidade.codigo}</option>
+                <option key={habilidade.id}>{habilidade.codigo}</option>
               )
             })}
           </Select>

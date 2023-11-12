@@ -29,6 +29,39 @@ export const Login = () => {
 
   const handleNextStep = async (e: Event) => {
     e.preventDefault();
+    if (data.email === '' || data.senha === '') {
+      setInvalid(true);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Verificar se os dados correspondem aos dados armazenados localmente no contexto
+      if (data.email === state.email && data.senha === state.password) {
+        // Login bem-sucedido
+        // Redirecionar com base no tipo de usuário
+        if (state.email.endsWith('@professor.com')) {
+          navigate('/professor');
+        } else {
+          navigate('/estudante');
+        }
+      } else {
+        // Login inválido
+        setInvalid(true);
+      }
+    } catch (err) {
+      console.log(err);
+      setInvalid(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
+  /*const handleNextStep = async (e: Event) => {
+    e.preventDefault();
     if (data.email === '' && data.senha === '') {
       setInvalid(true);
       return;
@@ -66,8 +99,8 @@ export const Login = () => {
       setInvalid(true);
     } finally {
       setLoading(false);
-    }
-  };
+    } 
+  };*/
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({

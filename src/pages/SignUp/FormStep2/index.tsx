@@ -4,7 +4,7 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import { FormActions, useForm } from '../../../utils/contexts/FormContext'
 import img from '../../../assets/img/image11.svg'
 import { Button } from '../../../components/Button'
-import PostService from '../../../services/post.service'
+//import PostService from '../../../services/post.service'
 import { Input } from '../../../components/Input'
 import { useNavigate } from 'react-router-dom'
 
@@ -34,7 +34,7 @@ export const FormStep2 = () => {
     })
   }, [dispatch]); 
 
-  const handleNextStep = () => {
+  /* const handleNextStep = () => {
     if (
       data.nome !== '' &&
       data.sobrenome !== '' &&
@@ -43,7 +43,8 @@ export const FormStep2 = () => {
       data.senha.length >= 8 &&
       data.inicioAtuacao !== '' &&
       data.areaAtuacao !== ''
-    ) {
+    )
+   {
       PostService.registerTeacher(data)
         .then(function (response) {
           console.log(response.status)
@@ -60,6 +61,35 @@ export const FormStep2 = () => {
     } else {
       setInvalid(true)
     }
+  } */
+
+  const handleNextStep = (e: Event) => {
+    e.preventDefault()
+    if (
+      data.nome !== '' &&
+      data.sobrenome !== '' &&
+      data.email !== '' &&
+      data.dataNasc !== '' &&
+      data.senha.length >= 8 &&
+      data.inicioAtuacao !== '' &&
+      data.areaAtuacao !== ''
+    ) 
+    dispatch({
+      type: FormActions.setAllData,
+      payload: {
+        name: data.nome,
+        lastName: data.sobrenome,
+        email: data.email,
+        birthDate: data.dataNasc,
+        password: data.senha,
+        careerTime: data.inicioAtuacao,
+        occupation: data.areaAtuacao,
+        // ... outras propriedades do formulário ...
+      }
+    });
+
+    navigate('/login')
+
   }
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -70,6 +100,11 @@ export const FormStep2 = () => {
     setEmailError(false)
     setInvalid(false)
   }
+  const validateEmail = (email: string): boolean => {
+    const regex = /^[a-zA-Z0-9._%+-]+@professor$/;
+    return regex.test(email);
+  };
+
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: FormActions.setPassword,
@@ -98,16 +133,16 @@ export const FormStep2 = () => {
             text="E-mail:"
             type="email"
             value={state.email}
-            placeholder="exemplo@email.com"
+            placeholder="exemplo@professor.com"
             onChange={handleEmailChange}
             onBlur={() => {
-              if (data.email === '') {
+              if (data.email === "" || !validateEmail(data.email)) {
                 setEmailError(true)
               }
             }}
           />
           <div className={style.error}>
-            {emailError && <p>Por favor, preencha o email</p>}
+            {emailError && <p>Por favor, preencha o email corretamente (obs: deve ter o dominio @professor)</p>}
           </div>
           <Input
             text="Senha:"

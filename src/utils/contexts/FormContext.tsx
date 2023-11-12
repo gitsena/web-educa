@@ -1,43 +1,43 @@
 // Context, Reducer, Provider, Hook
-import { createContext, ReactNode, useContext, useReducer } from 'react'
+import { createContext, ReactNode, useContext, useReducer } from "react";
 
 type State = {
-  name: string
-  lastName: string
-  currentStep: number
-  birthDate: string
-  occupation: string
-  careerTime: string
-  email: string
-  password: string
-  confirmPassword: string
-}
+  name: string;
+  lastName: string;
+  currentStep: number;
+  birthDate: string;
+  occupation: string;
+  careerTime: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
 type Action = {
-  type: FormActions
-  payload: any
-}
+  type: FormActions;
+  payload: any;
+};
 type ContextType = {
-  state: State
-  dispatch: (action: Action) => void
-}
+  state: State;
+  dispatch: (action: Action) => void;
+};
 type FormProviderProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const initialData = {
-  name: '',
-  lastName: '',
+  name: "",
+  lastName: "",
   currentStep: 0,
-  birthDate: '',
-  occupation: '',
-  careerTime: '',
-  email: '',
-  password: '',
-  confirmPassword: ''
-}
+  birthDate: "",
+  occupation: "",
+  careerTime: "",
+  email: "",
+  password: "",
+  confirmPassword: ""
+};
 
 // Context
-const FormContext = createContext<ContextType | undefined>(undefined)
+export const FormContext = createContext<ContextType | undefined>(undefined); // Exporte o contexto
 
 // Reducer
 export enum FormActions {
@@ -49,45 +49,50 @@ export enum FormActions {
   setCareerTime,
   setEmail,
   setPassword,
-  setConfirmPassword
+  setConfirmPassword,
+  setAllData
 }
+
 const formReducer = (state: State, action: Action) => {
   switch (action.type) {
     case FormActions.setName:
-      return { ...state, name: action.payload }
+      return { ...state, name: action.payload };
     case FormActions.setLastName:
-      return { ...state, lastName: action.payload }
+      return { ...state, lastName: action.payload };
     case FormActions.setCurrentStep:
-      return { ...state, currentStep: action.payload }
+      return { ...state, currentStep: action.payload };
     case FormActions.setBirthDate:
-      return { ...state, birthDate: action.payload }
+      return { ...state, birthDate: action.payload };
     case FormActions.setOccupation:
-      return { ...state, occupation: action.payload }
+      return { ...state, occupation: action.payload };
     case FormActions.setCareerTime:
-      return { ...state, careerTime: action.payload }
+      return { ...state, careerTime: action.payload };
     case FormActions.setEmail:
-      return { ...state, email: action.payload }
+      return { ...state, email: action.payload };
     case FormActions.setPassword:
-      return { ...state, password: action.payload }
+      return { ...state, password: action.payload };
     case FormActions.setConfirmPassword:
-      return { ...state, confirmPassword: action.payload }
+      return { ...state, confirmPassword: action.payload };
+    case FormActions.setAllData:
+      return { ...action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
 
 // Provider
 export const FormProvider = ({ children }: FormProviderProps) => {
-  const [state, dispatch] = useReducer(formReducer, initialData)
-  const value = { state, dispatch }
-  return <FormContext.Provider value={value}>{children}</FormContext.Provider>
-}
+  const [state, dispatch] = useReducer(formReducer, initialData);
+  const value = { state, dispatch };
+  return <FormContext.Provider value={value}>{children}</FormContext.Provider>;
+};
 
 // Context Hook
 export const useForm = () => {
-  const context = useContext(FormContext)
+  const context = useContext(FormContext);
   if (context === undefined) {
-    throw new Error('useForm prescisa ser usado dentro do FormProvider')
+    throw new Error("useForm prescisa ser usado dentro do FormProvider");
   }
-  return context
-}
+  return context;
+};
+
